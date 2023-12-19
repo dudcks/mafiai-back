@@ -1,12 +1,14 @@
 package com.mafiai.back;
 
 public class MyData {
+    private int category;
     private int id;
     private String name;
     private String description;
 
     // 생성자
-    public MyData(int id, String name, String description) {
+    public MyData(int category, int id, String name, String description) {
+        this.category=category;
         this.id = id;
         this.name = name;
         this.description = description;
@@ -17,6 +19,9 @@ public class MyData {
     }
 
     // Getter 메소드
+    public int getCategory(){
+        return category;
+    }
     public int getId() {
         return id;
     }
@@ -30,6 +35,9 @@ public class MyData {
     }
 
     // Setter 메소드 (필요한 경우 추가)
+    public void setCategory(int category){
+        this.category=category;
+    }
     public void setId(int id) {
         this.id = id;
     }
@@ -46,7 +54,8 @@ public class MyData {
     @Override
     public String toString() {
         return "MyData{" +
-                "id='" + id + '\'' +
+                ",category='" + category + '\'' +
+                ", id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 '}';

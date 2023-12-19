@@ -23,7 +23,14 @@ public class Apicontroller {
     public List<MyData> startGame(@RequestParam(name = "count", defaultValue = "5") int count,
                                   @RequestParam(name = "category", defaultValue = "0") int category) {
         GameStarter gameStarter = new GameStarter(dataStorage);
-        return gameStarter.startGame(count);
+
+        return gameStarter.startGame(count,category);
+    }
+    @GetMapping("/get_c")
+    public List<MyData> getAllGamec(@RequestParam(name = "category", defaultValue = "0") int category) {
+        // 저장된 모든 데이터 가져오기
+        GameStarter gameStarter = new GameStarter(dataStorage);
+        return gameStarter.getAllGameData(category);
     }
     @GetMapping("/get_all")
     public List<MyData> getAllGameData() {

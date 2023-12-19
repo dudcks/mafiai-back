@@ -48,8 +48,6 @@ public class ChatGptController {
                     .path("message")
                     .path("content")
                     .asText();
-            System.out.println(content);
-
             String jsonResponse = objectMapper.createObjectNode().put("content", content).toString();
             System.out.println(jsonResponse);
             return ResponseEntity.ok(jsonResponse);
